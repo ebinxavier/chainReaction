@@ -344,9 +344,16 @@ function onResize() {
      window.addEventListener('resize', onResize, false);
     
 
+            var query = location.search.replace('?','').replace(/&&/g,'&').split('&').reduce((a,e)=>{
+                data = e.split('=')	
+                return {...a,[data[0]]:data[1]}
+                },{})
+            if(query.grid>9) query.grid=9;
+            if(query.players>8) query.players=8;
+
             var UUIDMap={},UUID_Id=0;
             var mArray=[];
-            var playBox=5,noOfPlayers=3,currentPlayer=0,firstRoundCompleted=false,gameOver=false;
+            var playBox=query.grid||5,noOfPlayers=query.players||2,currentPlayer=0,firstRoundCompleted=false,gameOver=false;
             var playerColors=['0xff0e0e','0x00ff16','0x2900ff','0xfaff20','0xff8f00','0xfd00ff','0xffffff','0x03ffd3']; // g,b,r,y,o,p,w,c
             
 
