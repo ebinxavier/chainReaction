@@ -3,6 +3,7 @@
 * Clone the repo
 * Run a static file server like 'superstatic' in the root folder, or open the index.html
 * Thats it.
+* Rules: https://brilliant.org/wiki/chain-reaction-game/
 * Online Demo: https://ebinxavier.github.io/chainReaction/index.html?grid=5&&players=4
   - You can control the *grid size* and *number of players* from query parameters.
 
